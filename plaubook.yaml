@@ -1,5 +1,5 @@
-- name: palybook
-  host: frontend
-  task:
+- name: playbook
+  hosts: frontend
+  tasks:
     - name: ping the server
       ansible.builtin.ping:
