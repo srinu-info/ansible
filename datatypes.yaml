@@ -1,4 +1,4 @@
-- name:
+- name: DATATYPES
   hosts: local
   connection: local
   vars:
@@ -13,6 +13,6 @@
       SCRIPT: "shell, python"
 
   tasks:
-    - name: print all
-      ansible.builtin.debug:
-        mag: "COURSE: {{ COURSE}}, DURATION: {{DURATION}}, IS_LIVE?: {{IS_LIVE}}, TOOLS: {{TOOLS}}, CONCEPT: {{CONCEPTs}}"    
+  - name: print all
+    ansible.builtin.debug:
+      mag: "COURSE: {{ COURSE}}, DURATION: {{DURATION}}, IS_LIVE?: {{IS_LIVE}}, TOOLS: {{TOOLS}}, CONCEPT: {{CONCEPTs}}"    
