@@ -15,7 +15,7 @@
   tasks:
   - name: print all
     ansible.builtin.debug:
-      mag: "COURSE: {{ COURSE}}, DURATION: {{DURATION}}, IS_LIVE?: {{IS_LIVE}}, TOOLS: {{TOOLS}}, CONCEPT: {{CONCEPT}}"  
+      msg: "COURSE: {{ COURSE}}, DURATION: {{DURATION}}, IS_LIVE?: {{IS_LIVE}}, TOOLS: {{TOOLS}}, CONCEPT: {{CONCEPT}}"  
 
   - name: check number
     ansible.builtin.debug:
