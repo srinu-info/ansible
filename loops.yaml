@@ -1,0 +1,18 @@
+- name: loops
+  hosts: local
+  connection: local
+  become: yes
+  tasks:
+  - name: print from loops
+    ansible.become.debug:
+      msg: "hello {{ item }}"
+    loop:
+    - Srinivasa
+    - Gayatri 
+
+  - name: Install or Remove
+    ansible.builtin.dnf:
+      msg: "{{item}}"
+    loops:
+    - nginx
+    - mysql
