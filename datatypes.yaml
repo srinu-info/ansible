@@ -6,8 +6,8 @@
     COURSE: Anisble
     IS_LIVE: true
     Tools:
-      - Docker
-      - K8
+    - Docker
+    - K8
     CONCEPT:
       CI: jenkins
       SCRIPT: "shell, python"
