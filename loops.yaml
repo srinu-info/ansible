@@ -10,9 +10,17 @@
     - Srinivasa
     - Gayatri 
 
-  - name: Install or Remove
+  - name: Install 
     ansible.builtin.dnf:
-      msg: "{{item}}"
+      name: "{{item}}"
+      state: installed
     loops:
     - nginx
     - mysql
+
+  - name: Install or remove
+    ansible.builtin.dnf:
+      name: "{{item.name}}"
+      state: "{{item.state}}"
+    loops:
+    - { name: 'nginx', state: 'absent' }
