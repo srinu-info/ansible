@@ -16,15 +16,15 @@
 
   - name: from common file
     vars_files:
-      - course.yaml      
+    - course.yaml      
     ansible.builtin.debug:
       msg: "This is {{ COURSE}} from common var file"
 
   - name: Prompt
     vars_prompt:
-      - name: NAME
-        prompt: Enter Name
-        private: true    
+    - name: NAME
+      prompt: Enter Name
+      private: true    
     ansible.builtin.debug:
       msg: "This is {{NAME}} from prompting"
       
