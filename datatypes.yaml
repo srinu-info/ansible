@@ -2,7 +2,7 @@
   hosts: local
   connection: local
   vars:
-    DURATION: 10HR
+    DURATION: 10
     COURSE: Ansible
     IS_LIVE: true
     TOOLS:
@@ -15,4 +15,9 @@
   tasks:
   - name: print all
     ansible.builtin.debug:
-      mag: "COURSE: {{ COURSE}}, DURATION: {{DURATION}}, IS_LIVE?: {{IS_LIVE}}, TOOLS: {{TOOLS}}, CONCEPT: {{CONCEPTs}}"    
+      mag: "COURSE: {{ COURSE}}, DURATION: {{DURATION}}, IS_LIVE?: {{IS_LIVE}}, TOOLS: {{TOOLS}}, CONCEPT: {{CONCEPT}}"  
+
+  - name: check number
+    ansible.builtin.debug:
+      msg: " DURATION is greater than 5HRS"  
+    when: DURATION > 5
