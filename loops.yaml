@@ -4,7 +4,7 @@
   become: yes
   tasks:
   - name: print from loops
-    ansible.become.debug:
+    ansible.builtin.debug:
       msg: "hello {{ item }}"
     loop:
     - Srinivasa
