@@ -1,0 +1,18 @@
+- name:
+  hosts: local
+  connection: local
+  vars:
+    DURATION: 10HR
+    COURSE: Anisble
+    IS_LIVE: true
+    Tools:
+      - Docker
+      - K8
+    CONCEPT:
+      CI: jenkins
+      SCRIPT: "shell, python"
+
+  tasks:
+    - name: print all
+      ansible.builtin.debug:
+        mag: "COURSE: {{ COURSE}}, DURATION: {{DURATION}}, IS_LIVE?: {{IS_LIVE}}, TOOLS: {{TOOLS}}, CONCEPT: {{CONCEPTs}}"    
