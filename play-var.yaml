@@ -1,9 +1,35 @@
-- name: variables
-  hosts: local
-  connection: local
+- name: Variables in Anisble
+  hosts: frontend
   vars:
     COURSE: ANSIBLE
     DURATION: 10HR
   tasks:
-    - ansible.builtin.debug:
+    - name: Play level Variables
+      ansible.builtin.debug:
         msg: "This is {{COURSE}} course and duration of thid course is {{DURATION}}"
+
+    - name: Task level
+      vars:
+        COURSE: Task level Variables
+      ansible.builtin.debug:
+        msg: "This is {{ COURSE}}"
+
+    - name: from common file
+      vars_files:
+        - course.yaml      
+      ansible.builtin.debug:
+        msg: "This is {{ COURSE}} from common var file"
+
+    - name: Prompt
+      vars_prompt:
+        - name: NAME
+          prompt: Enter Name
+          private: true    
+      ansible.builtin.debug:
+        msg: "This is {{NAME}} from prompting"
+      
+    - name: from inventory 
+      ansible.builtin.debug:
+        msg: this is {{COURSE}}
+
+    
