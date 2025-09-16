@@ -3,9 +3,9 @@
   connection: local
   vars:
     DURATION: 10HR
-    COURSE: Anisble
+    COURSE: Ansible
     IS_LIVE: true
-    Tools:
+    TOOLS:
     - Docker
     - K8
     CONCEPT:
