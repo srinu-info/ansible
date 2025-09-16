@@ -11,7 +11,7 @@
     - Gayatri 
 
   - name: Install 
-    ansible.builtin.dnf:
+    ansible.builtin.package:
       name: "{{item}}"
       state: installed
     loops:
@@ -19,7 +19,7 @@
     - mysql
 
   - name: Install or remove
-    ansible.builtin.dnf:
+    ansible.builtin.package:
       name: "{{item.name}}"
       state: "{{item.state}}"
     loops:
